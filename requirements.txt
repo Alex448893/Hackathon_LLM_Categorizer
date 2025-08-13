@@ -4,6 +4,9 @@ pandas
 fastapi
 uvicorn
 streamlit
+dotenv
+paramiko    #had to manually install this
+tqdm
 
 # File type support
 python-docx       # for .docx files
