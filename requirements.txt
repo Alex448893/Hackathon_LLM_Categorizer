@@ -1,0 +1,17 @@
+# Core dependencies
+pymupdf
+pandas
+fastapi
+uvicorn
+streamlit
+
+# File type support
+python-docx       # for .docx files
+extract-msg       # for .msg (Outlook) files
+chardet           # for encoding detection in .txt and other raw text files
+
+# Optional (for .rtf support – skip if not needed)
+pyth              # optional, for .rtf file parsing
+
+# Dev/testing support (if needed)
+ollama            # as placeholder/mock, no real calls made in mock setup

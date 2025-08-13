@@ -1,0 +1,356 @@
+{
+  "agreement_fields": [
+    {
+      "field_name": "Manufacturer",
+      "description": "Manufacturer or contractor that this agreement is signed with.",
+      "example": "HP",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Agreement name",
+      "description": "Name of the agreement.",
+      "example": "HP Maintenance Agreement",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Agreement number",
+      "description": "External agreement number.",
+      "example": "HP19289182",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Master agreement number",
+      "description": "If this agreement is a sub agreement, this references the master agreement (must already exist).",
+      "example": "HPJK9988971",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Agreement type",
+      "description": "Type of license agreement. Allowed values: SOFTWARE, MAINTENANCE, SUPPORT, PURCHASE, ORACLE, OTHER.",
+      "example": "MAINTENANCE",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Activate automatic upgrade",
+      "description": "Enable automatic upgrade for licenses attached to this agreement.",
+      "example": "YES",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "field_name": "Subscription agreement",
+      "description": "If set to YES, attached licenses will be invalid when the agreement expires.",
+      "example": "NO",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "field_name": "Valid from",
+      "description": "The date from which this agreement is valid.",
+      "example": "2010-10-28",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Valid to",
+      "description": "The date to which this agreement is valid.",
+      "example": "2013-08-31",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Alert on expiration",
+      "description": "Alert on agreement expiration.",
+      "example": "YES",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "field_name": "Legal organisation",
+      "description": "Legal organization that signed this agreement.",
+      "example": "ROOT,IT,SUPPORT",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Restrict organisation",
+      "description": "Restrict access according to organization setting.",
+      "example": "YES",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "field_name": "Custom fields",
+      "description": "Import data to existing agreement custom fields. Supported data types: Text, Date, Yes|No, Digit, Currency, Decimal.",
+      "example": "",
+      "type": "string",
+      "required": false
+    }
+  ],
+  "license_fields": [
+    {
+      "field_name": "License ID",
+      "description": "ID of an existing license to be updated. Required for license updates.",
+      "example": "486",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Application name",
+      "description": "Name of an existing application.",
+      "example": "Adobe Photoshop CS4",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "SKU (stock keeping unit)",
+      "description": "SKU number of an existing application. If the SKU is not in the database, the license purchase will be imported as incomplete.",
+      "example": "SFKJHDF34",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Legal organization",
+      "description": "Legal organization that made the purchase. Required to get complete status.",
+      "example": "ROOT,IT,SUPPORT",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Purchase date",
+      "description": "Date of purchase. Required to get complete status. Supported formats: dd/MM/yyyy, MM/dd/yyyy, dd-MM-yyyy, yyyy/MM/dd, yyyy-MM-dd.",
+      "example": "2010-10-28",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Metric",
+      "description": "The unit of measurement for the license. An empty value marks the purchase as incomplete.",
+      "example": "USERS",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Assignment type",
+      "description": "Information on how a license is assigned. Allowed values: Organization, Computer/datacenter, User, Site.",
+      "example": "Organization",
+      "type": "string",
+      "required": true
+    },
+    {
+      "field_name": "Is upgrade",
+      "description": "Defines if the license is an upgrade license. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "YES",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Upgrade from license ID",
+      "description": "ID of the license to upgrade from. Required if 'Is upgrade' is set to YES.",
+      "example": "242",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Base license quantity to upgrade",
+      "description": "Number of base licenses to upgrade.",
+      "example": "50",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Quantity",
+      "description": "Number of licenses. Required to get complete status.",
+      "example": "50",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Subscription valid from",
+      "description": "Start of the subscription period. Required if 'Is subscription' is set to YES.",
+      "example": "2010-01-01",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Subscription valid to",
+      "description": "End of the subscription period. Required if 'Is subscription' is set to YES.",
+      "example": "2011-12-31",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Is subscription",
+      "description": "Defines if it is a subscription license. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "NO",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Purchase price",
+      "description": "Value of the license purchase.",
+      "example": "100",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Purchase currency",
+      "description": "Currency of the license purchase.",
+      "example": "EUR",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Cross edition rights",
+      "description": "Right to use the same and/or lower editions of the product. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "YES",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Downgrade rights",
+      "description": "Right to use the lower product version of the product. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "YES",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Auto allocate (distribute) license",
+      "description": "Activates auto allocation. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "NO",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance includes upgrade rights",
+      "description": "Defines whether a maintenance agreement includes upgrade rights. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "YES",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance according to agreement",
+      "description": "Defines whether automatic upgrade uses agreement period. Allowed values: YES, 1, True or NO, 0, False.",
+      "example": "NO",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance and support valid from",
+      "description": "Date from which automatic upgrade is valid. Required if 'Maintenance according to agreement' is set to NO.",
+      "example": "2010-10-28",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance and support valid to",
+      "description": "Date until which automatic upgrade is valid.",
+      "example": "2013-08-31",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Agreement number",
+      "description": "An external agreement number. Must exist before the license import. The purchase date must be within the agreement period.",
+      "example": "HP19289182",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "External ID",
+      "description": "ID from an external system such as ERP, CRM, or sales/order systems.",
+      "example": "ABC123",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Vendor/reseller",
+      "description": "Name of the vendor or reseller from whom the license was purchased.",
+      "example": "Amazon",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "License proof location",
+      "description": "Location where proof of license purchase is stored.",
+      "example": "Safe at the office",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Purchase notes",
+      "description": "Enter license purchase-specific information as free text.",
+      "example": "",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Serial numbers/license keys",
+      "description": "Serial numbers or license keys received for this purchase.",
+      "example": "",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Installation media location",
+      "description": "Location where installation media is stored.",
+      "example": "File server 1",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Purchase invoice reference",
+      "description": "Invoice reference number found on the invoice.",
+      "example": "ADB00889912",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Product description",
+      "description": "Use the product description to add either a custom product description or the manufacturer's.",
+      "example": "OfficeStd 2010 SNGL MVL",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance cost",
+      "description": "Maintenance cost per period.",
+      "example": "100",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Support cost",
+      "description": "Support cost per period.",
+      "example": "100",
+      "type": "number",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance and support notes",
+      "description": "Notes on maintenance and support.",
+      "example": "",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Maintenance and support invoice",
+      "description": "Reference to the maintenance and support invoice.",
+      "example": "SHB00375297",
+      "type": "string",
+      "required": false
+    },
+    {
+      "field_name": "Custom fields",
+      "description": "Import data into existing license custom fields. Supported custom field data types: Text, Date, Yes|No, Digit, Currency, Decimal.",
+      "example": "",
+      "type": "string",
+      "required": false
+    }
+  ]
+}
